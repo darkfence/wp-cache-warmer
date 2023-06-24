@@ -1,5 +1,5 @@
 # WordPress Cache Warmer
-This script is designed to retrieve an RSS feed from any website on WordPress and then execute cURL requests to cache new posts. It helps ensure that the latest posts are cached and readily available for faster access.
+This script is designed to retrieve an RSS feed from any website on WordPress and then execute cURL requests to cache new posts. It helps ensure that the latest posts with their amp version are cached and readily available for faster access.
 
 ## Installation
 1. Download the script to your desired location.
@@ -36,7 +36,7 @@ grep -Fxvf links_old.txt links.txt | rev | cut -c 2- | rev > new.txt
 rm links_old.txt 
 mv links.txt links_old.txt
 ```
-5. If there are no new articles, the script outputs *No new articles.*"* Otherwise, it proceeds to execute cURL requests for each new link.
+5. If there are no new articles, the script outputs *No new articles.* Otherwise, it proceeds to execute cURL requests for each new link.
 ```shell
 if [[ -z $(grep '[^[:space:]]' new.txt) ]] ; then
   echo "No new articles"
